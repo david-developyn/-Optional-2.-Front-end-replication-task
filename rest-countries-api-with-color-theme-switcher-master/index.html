@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="index-script.js" defer></script>
+		<link rel="stylesheet" href="global-styles.css" />
+		<link rel="stylesheet" href="index-styles.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<header>
+			<h1>Where in the world?</h1>
+			<button>
+				<img src="moon-sharp.svg" />
+				Dark Mode
+			</button>
+		</header>
+		<form>
+			<input id="search-box" type="text" placeholder="Search for a country..." />
+			<select id="region-filter">
+				<option value="All">Filter by Region</option> <!-- possibly add disable attribute-->
+				<option value="Africa">Africa</option>
+				<option value="Americas">Americas</option>
+				<option value="Asia">Asia</option>
+				<option value="Europe">Europe</option>
+				<option value="Oceania">Oceania</option>
+			</select>
+		</form>
+		<section id="country-list"></section>
+	</body>
+</html>

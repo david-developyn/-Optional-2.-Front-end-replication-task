@@ -1,0 +1,54 @@
+div, input, select {
+	border-radius: 0.5rem;
+}
+
+div {
+	background-color: hsl(209, 23%, 22%);
+	margin: 2rem;
+	padding-bottom: 1.5rem;
+	width: 20rem;
+}
+
+div img {
+	border-radius: 0.5rem 0.5rem 0 0;
+	width: 100%;
+}
+
+form {
+	justify-content: space-between;
+}
+
+h2 {
+    font-size: 1.25rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+h2, li {
+	margin-left: 2rem;
+}
+
+input, select {
+	margin-top: 2rem;
+}
+
+input {
+	background-image: url(search-sharp.svg);
+	background-position: 0 center;
+	background-repeat: no-repeat;
+	background-size: 20px;
+	border: 1rem solid transparent;
+	max-width: 25rem;
+	padding-left: 2rem;
+	width: 100%;
+}
+
+section {
+	justify-content: space-evenly;
+	margin: 0 calc(5vw - 2rem);
+}
+
+select {
+	border: 1rem solid transparent; /* Used to push the dropdown arrow away from the side; acts like padding */
+	padding-right: 5rem;
+}
