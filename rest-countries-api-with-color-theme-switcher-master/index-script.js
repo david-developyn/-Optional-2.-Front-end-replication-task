@@ -1,10 +1,10 @@
 load_country_list();
-document.getElementById("search-box").addEventListener('input',
+document.getElementById("search-box").addEventListener("input",
 	function () {
 		load_country_list();
 	}
 );
-document.getElementById("region-filter").addEventListener('input',
+document.getElementById("region-filter").addEventListener("input",
 	function () {
 		load_country_list();
 	}
@@ -12,8 +12,9 @@ document.getElementById("region-filter").addEventListener('input',
 
 function load_country_list() {
 	const search_query = document.getElementById("search-box").value;
+	const filter_query = "?fields=flag,name,population,region,subregion,capital,topLevelDomain,currencies,languages,borders";
 	if (search_query === "") {
-		window.fetch("https://restcountries.com/v2/all").then(
+		window.fetch(`https://restcountries.com/v2/all${filter_query}`).then(
 			function (response) {
 				return response.json();
 			}
@@ -23,7 +24,7 @@ function load_country_list() {
 			}
 		);
 	} else {
-		window.fetch("https://restcountries.com/v2/name/" + search_query).then(
+		window.fetch(`https://restcountries.com/v2/name/${search_query}${filter_query}`).then(
 			function (response) {
 				return response.json();
 			}
@@ -52,15 +53,14 @@ function filter_by_region(data) {
 	country_list_section.innerHTML = "";
 	data.forEach(
 		function (element) {
-			const country_item = document.createElement("div");
-			let capital_city;
-			if (element["capital"] !== undefined) {
+			const country_item = document.createElement("a");
+			country_item.href = `country-details.html?country=${window.JSON.stringify(element)}`;
+			let capital_city = "";
+			if (element["capital"]) {
 				capital_city = `<li><strong>Capital:</strong> ${element["capital"]}</li>`;
-			} else {
-				capital_city = "";
 			}
 			country_item.innerHTML = `
-				<img src='${element["flags"]["svg"]}' />
+				<img src='${element["flag"]}' />
 				<h2>${element["name"]}</h2>
 				<ul>
 				<li><strong>Population:</strong> ${element["population"].toLocaleString()}</li>
@@ -68,9 +68,6 @@ function filter_by_region(data) {
 				${capital_city}
 				</ul>
 			`;
-			country_item.onclick = function () {
-				window.location.href = `country-details.html?data=${window.JSON.stringify(element)}`
-			}
 			country_list_section.appendChild(country_item);
 		}
 	);

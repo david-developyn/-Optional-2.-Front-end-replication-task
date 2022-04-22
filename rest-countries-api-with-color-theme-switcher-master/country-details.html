@@ -9,19 +9,22 @@
 	<body>
 		<header>
 			<h1>Where in the world?</h1>
-			<button>
+			<!-- <button>
 				<img src="moon-sharp.svg" />
 				Dark Mode
-			</button>
+			</button> -->
 		</header>
-		<button>Back</button>
+		<a href="index.html">
+			<img src="arrow-back-sharp.svg" />
+			Back
+		</a>
 		<section>
-			<img src="https://flagcdn.com/pe.svg" />
+			<img id="flag" />
 			<div>
-				<h2>Belgium</h2>
+				<h2 id="name"></h2>
 				<div>
 					<ul>
-						<li><strong>Native Name: </strong><span id="name"></span></li>
+						<li><strong>Native Name: </strong><span id="native-name"></span></li>
 						<li><strong>Population: </strong><span id="population"></span></li>
 						<li><strong>Region: </strong><span id="region"></span></li>
 						<li><strong>Sub Region: </strong><span id="sub-region"></span></li>
@@ -30,15 +33,13 @@
 					<ul>
 						<li><strong>Top Level Domain: </strong><span id="domain"></span></li>
 						<li><strong>Currencies: </strong><span id="currencies"></span></li>
-						<li><strong>Language: </strong><span id="language"></span></li>
+						<li><strong>Language: </strong><span id="languages"></span></li>
 					</ul>
 				</div>
-				<!-- <div>
+				<nav>
 					<h3>Border Countries:</h3>
-					<button>France</button>
-					<button>Germany</button>
-					<button>Netherlands</button>
-				</div> -->
+					<div id="border-countries"></div>
+				</nav>
 			</div>
 		</section>
 	</body>

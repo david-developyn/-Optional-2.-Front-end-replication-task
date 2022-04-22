@@ -1,15 +1,16 @@
-div, input, select {
-	border-radius: 0.5rem;
+input, select {
+	margin-left: 5vw;
+	margin-right: 5vw;
 }
 
-div {
+a {
 	background-color: hsl(209, 23%, 22%);
 	margin: 2rem;
 	padding-bottom: 1.5rem;
 	width: 20rem;
 }
 
-div img {
+a > img {
 	border-radius: 0.5rem 0.5rem 0 0;
 	width: 100%;
 }
